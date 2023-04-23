@@ -2,8 +2,10 @@ from flask import Flask, request, jsonify
 from PIL import Image
 import numpy as np
 import tensorflow as tf
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Load the TFLite model
 interpreter = tf.lite.Interpreter(model_path="C:\\Users\\Admin\\Downloads\\model.tflite")
@@ -39,3 +41,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)  # Run the Flask app
+
