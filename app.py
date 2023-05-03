@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load the TFLite model
-interpreter = tf.lite.Interpreter(model_path="C:\\Users\\Admin\\Downloads\\model.tflite")
+interpreter = tf.lite.Interpreter(model_path="model.tflite")
 interpreter.allocate_tensors()
 classes = ['Apple___Apple_scab',
            'Apple___Black_rot',
